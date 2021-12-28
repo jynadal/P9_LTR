@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New LTR</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <nav>
+      <a href="/">
+        <h1 class="logo">LITReview</h1>
+      </a>
+      <ul class="nav">
+        <li><a href="flux/">Flux</a></li>
+        <li><a href="posts/">Posts</a></li>
+        <li><a href="abonnements/">Abonnements</a></li>
+        <li><a href="authentication/">Se déconnecter</a></li>
+      </ul>
+    </nav>
+    <main>{% block content %} {% endblock content %}</main>
+    <footer>
+      <div class="menu">
+        <ul class="nav">
+          <li><a href="flux/">Flux</a></li>
+          <li><a href="posts/">Posts</a></li>
+          <li><a href="abonnements/">Abonnements</a></li>
+          <li><a href="authentication/">Se déconnecter</a></li>
+        </ul>
+      </div>
+      <div class="project">
+        <ul class="nav">
+          <li>P1</li>
+          <li>P3</li>
+          <li>P4</li>
+          <li>P9</li>
+        </ul>
+      </div>
+      <div class="contact">
+        <ul class="contact">
+          <li>Tel</li>
+          <li>mail</li>
+          <li>linkedin</li>
+          <li>gitHub</li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>

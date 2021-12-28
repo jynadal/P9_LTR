@@ -1,0 +1,15 @@
+<!-- Ticket -->
+<!-- <div class="container_ticket">
+  <p>Ticket - {{ first_ticket.user }}</p>
+  <p class="title">{{ first_ticket.title }}</p>
+  <p class="def">{{ first_ticket.description }}</p>
+  <img src="images/couvertures/pierre_parlante_IAsimov.jpg" alt="" />
+</div> -->
+{% for one_ticket in all_tickets %}
+<div class="container_ticket">
+  <p>Ticket - {{ one_ticket.user }}</p>
+  <p class="title">{{ one_ticket.title }}</p>
+  <p class="def">{{ one_ticket.description }}</p>
+  <img src="images/couvertures/pierre_parlante_IAsimov.jpg" alt="" />
+</div>
+{% endfor %}
