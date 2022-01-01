@@ -1,12 +1,16 @@
 <!DOCTYPE html>
-{% load static %}
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>New LTR</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    {% load static %}
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'base/style.css' %}"
+    />
   </head>
   <body>
     <nav>
@@ -20,7 +24,7 @@
         <li><a href="authentication/">Se déconnecter</a></li>
       </ul>
     </nav>
-    <main>{% block content %} {% endblock content %}</main>
+    <main>{% block pagecontent %} {% endblock %}</main>
     <footer>
       <div class="menu">
         <ul class="nav">

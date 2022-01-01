@@ -1,0 +1,27 @@
+body {
+  background-color: whitesmoke;
+}
+a {
+  list-style: none;
+}
+nav {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.nav {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-around;
+}
+h1 {
+  color: grey;
+}
+footer {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+}

@@ -1,6 +1,6 @@
 from django.contrib import admin
 
 # Register your models here.
-from Flux.models import Ticket
+from Review.models import Review
 
-admin.site.register(Ticket)
+admin.site.register(Review)

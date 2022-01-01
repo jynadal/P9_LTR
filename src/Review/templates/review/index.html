@@ -1,0 +1,28 @@
+{% extends 'base/base.html' %} {% block pagecontent %}
+
+<!-- Review -->
+<div class="review">
+  <p>Vous avez publié une - {{ avis.user }}</p>
+  <p class="date">{{ avis.time_created }}</p>
+  <p class="title">
+    {{ avis.definition }} - <span class="rank"> * * * * * </span>
+  </p>
+  <p class="def">{{ avis.description }}</p>
+
+  <div class="container_ticket">
+    <p>Ticket in Review- {{ first_ticket.user }}</p>
+    <p class="title">{{ first_ticket.title }}</p>
+    <p class="def">{{ first_ticket.description }}</p>
+    <img src="images/couvertures/pierre_parlante_IAsimov.jpg" alt="" />
+  </div>
+</div>
+
+<div class="container_ticket">
+  <p>Ticket outside Review- {{ one_ticket.user }}</p>
+  <p class="title">{{ one_ticket.title }}</p>
+  <p class="def">{{ one_ticket.description }}</p>
+  <img src="images/couvertures/pierre_parlante_IAsimov.jpg" alt="" />
+</div>
+<!-- {% for one_ticket in all_tickets %} -->
+<!-- {% endfor %} -->
+{% endblock pagecontent%}
