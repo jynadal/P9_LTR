@@ -14,19 +14,12 @@
   </head>
   <body>
     <nav>
-      <a href="/">
-        <h1 class="logo">LITReview</h1>
-      </a>
-      <ul class="nav">
-        <li><a href="flux/">Flux</a></li>
-        <li><a href="posts/">Posts</a></li>
-        <li><a href="abonnements/">Abonnements</a></li>
-        <li><a href="authentication/">Se déconnecter</a></li>
-      </ul>
-    </nav>
-    <main>{% block pagecontent %} {% endblock %}</main>
-    <footer>
-      <div class="menu">
+      <div>
+        <a href="/">
+          <h1 class="logo">LITReview</h1>
+        </a>
+      </div>
+      <div>
         <ul class="nav">
           <li><a href="flux/">Flux</a></li>
           <li><a href="posts/">Posts</a></li>
@@ -34,15 +27,26 @@
           <li><a href="authentication/">Se déconnecter</a></li>
         </ul>
       </div>
-      <div class="project">
-        <ul class="nav">
+    </nav>
+    <main class="pagecontain">{% block pagecontent %} {% endblock %}</main>
+    <footer class="footer">
+      <div class="nav">
+        <ul class="menu">
+          <li><a href="flux/">Flux</a></li>
+          <li><a href="posts/">Posts</a></li>
+          <li><a href="abonnements/">Abonnements</a></li>
+          <li><a href="authentication/">Se déconnecter</a></li>
+        </ul>
+      </div>
+      <div class="nav">
+        <ul class="project">
           <li>P1</li>
           <li>P3</li>
           <li>P4</li>
           <li>P9</li>
         </ul>
       </div>
-      <div class="contact">
+      <div class="nav">
         <ul class="contact">
           <li>Tel</li>
           <li>mail</li>

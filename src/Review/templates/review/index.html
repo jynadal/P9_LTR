@@ -1,6 +1,11 @@
 {% extends 'base/base.html' %} {% block pagecontent %}
 
 <!-- Review -->
+<div class="btn">
+  <button class="ask">Demander une critique</button>
+  <button class="create">Créer une critique</button>
+</div>
+
 <div class="review">
   <p>Vous avez publié une - {{ avis.user }}</p>
   <p class="date">{{ avis.time_created }}</p>
@@ -17,11 +22,13 @@
   </div>
 </div>
 
-<div class="container_ticket">
-  <p>Ticket outside Review- {{ one_ticket.user }}</p>
-  <p class="title">{{ one_ticket.title }}</p>
-  <p class="def">{{ one_ticket.description }}</p>
-  <img src="images/couvertures/pierre_parlante_IAsimov.jpg" alt="" />
+<div class="review">
+  <div class="container_ticket">
+    <p>Ticket outside Review- {{ one_ticket.user }}</p>
+    <p class="title">{{ one_ticket.title }}</p>
+    <p class="def">{{ one_ticket.description }}</p>
+    <img src="images/couvertures/pierre_parlante_IAsimov.jpg" alt="" />
+  </div>
 </div>
 <!-- {% for one_ticket in all_tickets %} -->
 <!-- {% endfor %} -->
