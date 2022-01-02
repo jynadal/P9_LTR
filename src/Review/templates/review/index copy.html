@@ -2,12 +2,8 @@
 
 <!-- Review -->
 <div class="btn">
-  <button class="ask">
-    <a href="{% url 'ticket_create' %}"> Demander une critique</a>
-  </button>
-  <button class="create">
-    <a href="{% url 'review_create' %}">Créer une critique</a>
-  </button>
+  <button class="ask">Demander une critique</button>
+  <button class="create">Créer une critique</button>
 </div>
 
 {% for review in review_list %}
@@ -19,7 +15,7 @@
   </p>
   <p class="def">{{ review.body }}</p>
 </div>
-{% endfor %} {% include "./ticket.html" %} {% for rt in rt_list %}
+{% endfor %} {% for rt in rt_list %}
 
 <div class="review">
   <div class="container_ticket">
@@ -30,7 +26,21 @@
   </div>
 </div>
 {% endfor %}
-
 <!-- {% for one_ticket in all_tickets %} -->
 <!-- {% endfor %} -->
 {% endblock pagecontent%}
+
+<!-- {% if {{ review.title }}== {{ rt.title}} %}
+
+  <div class="container_ticket">
+    <p>Ticket in Review N° - {{ review.ticket }}</p>
+    <p class="title">{{ review.title }}</p>
+    <p class="def">{{ first_ticket.description }}</p>
+    <img src="images/couvertures/pierre_parlante_IAsimov.jpg" alt="" />
+  </div>
+
+  {% else %}
+
+  <button class="create">Créer une critique</button>
+
+  {% endif %} -->

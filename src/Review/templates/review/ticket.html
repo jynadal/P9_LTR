@@ -1,0 +1,16 @@
+<!-- Tickets -->
+
+{% for rt in rt_list %}
+
+<div class="review">
+  <div class="container_ticket">
+    <p>Ticket outside Review - {{ rt.user }}</p>
+    <p class="title">{{ rt.title }}</p>
+    <p class="def">{{ rt.description }}</p>
+    <img src="images/couvertures/pierre_parlante_IAsimov.jpg" alt="" />
+  </div>
+</div>
+{% endfor %}
+
+<!-- {% for one_ticket in all_tickets %} -->
+<!-- {% endfor %} -->
