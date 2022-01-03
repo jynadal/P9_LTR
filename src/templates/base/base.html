@@ -28,7 +28,9 @@
         </ul>
       </div>
     </nav>
-    <main class="pagecontain">{% block pagecontent %} {% endblock %}</main>
+    <main class="pagecontain">
+      {% block pagecontent %} {% endblock pagecontent %}
+    </main>
     <footer class="footer">
       <div class="nav">
         <ul class="menu">

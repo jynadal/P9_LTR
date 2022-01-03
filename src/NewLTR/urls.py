@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
-from Authentication import views
+# from Authentication import views
+import Authentication.views
 
 import Review.views
 # from Review.models import Review
@@ -8,7 +9,7 @@ import Review.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.index),
+    path('',Authentication.views.login_page, name='login'),
     # path('',include('Authentication.urls')),
     path('flux/',Review.views.review_ticket, name='review_ticket'),
     # path('flux/',Review.views.rt_detail, name='rt_detail'),
