@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect, render
 from Review.models import Review, Ticket
 from Review.forms import reviewForm, ticketForm
@@ -21,7 +22,6 @@ def review_change(request, id):
             form.save()
             # rediriger vers la page détaillée du "ticket" que nous venons de mettre à jouir
             return redirect('review_detail', ticket.id)
-
     else:
         form = ticketForm(instance=ticket)
 
@@ -38,6 +38,7 @@ def review_change(request, id):
 #     #  {'avis':avis[3]}
 #      )
 
+@login_required
 def review_ticket(request):
     review_list = Review.objects.all()
     return render(request, 'review/index.html',
@@ -48,6 +49,7 @@ def review_ticket(request):
 #     return render(request, 'review/index.html',
 #     {'rt_list':rt_list})
 
+@login_required
 def rt_detail(request, ticket):
     rt_list= Ticket.objects.get(ticket=ticket)
     return render(request, 'review/ticket.html',

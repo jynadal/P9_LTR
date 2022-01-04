@@ -14,9 +14,9 @@
     {{ review.headline }} - <span class="rank">{{review.rating}}</span>
   </p>
   <p class="def">{{ review.body }}</p>
+  {{review.ticket.title}}
 </div>
 {% endfor %} {% for rt in rt_list %}
-
 <div class="review">
   <div class="container_ticket">
     <p>Ticket outside Review - {{ rt.user }}</p>

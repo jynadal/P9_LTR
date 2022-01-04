@@ -5,7 +5,6 @@
 # from django.shortcuts import render
 
 
-
 # def feed(request):
 #     #reviews = get_users_viewable_reviews(request.user)
 #     # returns queryset of reviews
