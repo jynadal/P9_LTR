@@ -12,7 +12,7 @@
 
 {% for review in review_list %}
 <div class="review">
-  <p>Vous avez publié une - {{ review.user }}</p>
+  <p>Vous avez publié une review (critique)- {{ review.user }}</p>
   <p class="date">{{ review.time_created }}</p>
   <p class="title">
     {{ review.headline }} - <span class="rank">{{review.rating}}</span>
