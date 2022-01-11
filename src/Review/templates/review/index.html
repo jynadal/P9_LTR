@@ -6,11 +6,24 @@
     <a href="{% url 'ticket_create' %}"> Demander une critique</a>
   </button>
   <button class="create">
-    <a href="{% url 'review_create' %}">Créer une critique</a>
+    <a href="{% url 'create_review_ticket' %}">Créer une critique</a>
   </button>
 </div>
 
-{% for review in review_list %}
+<h2>Tickets & Reviews</h2>
+<div class="grid-container">
+  {% for review in reviews %}
+
+  <div class="post">
+    <a href="{% url 'view_review' review.id %}">
+      <h4>Billet : {{ review.ticket }}</h4>
+      <img src="{{ ticket.review.image.url }}" />
+    </a>
+  </div>
+  {% endfor %}
+</div>
+
+<!-- {% for review in review_list %}
 <div class="review">
   <p>Vous avez publié une review (critique)- {{ review.user }}</p>
   <p class="date">{{ review.time_created }}</p>
@@ -29,7 +42,7 @@
     <img src="images/couvertures/pierre_parlante_IAsimov.jpg" alt="" />
   </div>
 </div>
-{% endfor %}
+{% endfor %} -->
 
 <!-- {% for one_ticket in all_tickets %} -->
 <!-- {% endfor %} -->

@@ -1,12 +1,53 @@
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import redirect, render
+from django.shortcuts import get_object_or_404, redirect, render
 from Review.models import Review, Ticket
 from Review.forms import reviewForm, ticketForm
 
+
 # CRUD
+@login_required
 def ticket_create(request):
     form = ticketForm()
+    if request.method =='POST':
+        form = ticketForm(request.POST, request.FILES)
+        ticket = form.save(commit=False)
+        ticket.user = request.user
+        # here add ticket.image=request.image
+        ticket.save()
+        return redirect("flux/")
     return render(request, 'review/ticket_create.html', {'form':form})
+
+@login_required
+def ticket_and_review_create(request):
+    review_form = reviewForm()
+    ticket_form = ticketForm()
+    if request.method == 'POST':
+        review_form = reviewForm(request.POST)
+        ticket_form = ticketForm(request.POST)#,request.FILES
+        if any([review_form.is_valid(),ticket_form.is_valid()]):
+            ticket = ticket_form.save(commit=False)
+            ticket.title = request.title
+            ticket.user = request.user
+            # here add ticket.image=request.image
+            ticket.save()
+
+            review = review_form.save(commit=False)
+            review.user = request.user
+            review.ticket = ticket.title
+            review.save()
+            return redirect('flux')
+    context = {
+        'review_form': review_form,
+        'ticket_form': ticket_form,
+}
+    return render(request,'review/create_review_ticket.html', context=context)
+
+@login_required
+def view_review(request, review_id):
+    review = get_object_or_404(Review, id=review_id)
+    return render(request,'review/view_review.html', {'review':review})       
+
+
 def review_create(request):
     formRT = reviewForm()
     return render(request, 'review/review_create.html',{'formRT':formRT})
@@ -38,11 +79,13 @@ def review_change(request, id):
 #     #  {'avis':avis[3]}
 #      )
 
+
+# Equivalant du HOME
 @login_required
 def review_ticket(request):
-    review_list = Review.objects.all()
-    return render(request, 'review/index.html',
-    {'review_list':review_list })
+    reviews = Review.objects.all()
+    tickets = Ticket.objects.all()
+    return render(request, 'review/index.html',context={'reviews':reviews, 'tickets':tickets})
 
 # def rt_detail(request):
 #     rt_list= Ticket.objects.all()

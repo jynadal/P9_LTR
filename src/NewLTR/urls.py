@@ -1,3 +1,5 @@
+from django.conf import settings
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.shortcuts import redirect
 from django.urls import path, include
@@ -28,11 +30,16 @@ urlpatterns = [
 
     #CRUD
     path('flux/add/', Review.views.ticket_create, name="ticket_create"),
-    path('flux/addRT/', Review.views.review_create, name="review_create"),
+    path('flux/addRT/', Review.views.ticket_and_review_create, name="create_review_ticket"),
+    path('flux/<int:review_id>/',Review.views.view_review, name="view_review"),
     # path('flux/addRT/', include('ticket_create.urls')),
-    # path('flux/changeT/',Review.views.ticket_change, name="ticket_change"),
     # path('flux/changeRT/', Review.views.review_change, name="review_change"),
     
 
     # path('flux/',Review.views.review, name='review'),
 ]
+# if settings.DEBUG:
+#     urlpatterns += static(
+#         settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
+#     )
+

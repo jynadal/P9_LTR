@@ -1,0 +1,11 @@
+{% extends 'base/base.html' %} {% block pagecontent %}
+
+<!--View Review -->
+<h1>{{review.ticket}}</h1>
+<img src="{{ review.image.url }}" />
+<p>{{review.headline}}</p>
+<p>{{review.body}}</p>
+<p>{{review.user}} - {{review.user}}</p>
+<p>{{review.rating}}</p>
+
+{% endblock pagecontent%}
